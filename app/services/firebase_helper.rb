@@ -1,11 +1,6 @@
 module FirebaseHelper
-  require "jwt"
-
-  CONFIG =  File.open('firebase.json').read
-  BASE_URI = 'https://toy-chat.firebaseio.com'
-
   def firebase
-    Firebase::Client.new(BASE_URI, CONFIG)
+    Firebase::Client.new(ENV["FIREBASE_BASE_URI"], FirebaseToken::CONFIG)
   end
 
   def firebase_ref
