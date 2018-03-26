@@ -1,4 +1,4 @@
-json.(user, :id, :name)
+json.(user, :id, :name, :avatar)
 json.firebase_token FirebaseToken.generate(user.id)
 
 if user.business
