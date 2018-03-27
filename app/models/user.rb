@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_one :business
-  has_many :business_bookings, through: :business
+  has_many :business_bookings, through: :business, source: 'bookings'
 
   def firebase_ref
     "users/#{id}"
